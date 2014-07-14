@@ -2,7 +2,7 @@
 <html>
         <head>
         
-            <SCRIPT TYPE="text/javascript" SRC="slideshow.js">
+            <SCRIPT TYPE="text/javascript">
                 /*==================================================*
                  $Id: slideshow.js,v 1.16 2003/10/14 12:39:00 pat Exp $
                  Copyright 2000-2003 Patrick Fitzgerald
