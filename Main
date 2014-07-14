@@ -1,9 +1,84 @@
 <!DOCTYPE html>
 <html>
     <head>
+    
+        <!--
+            <title>
+                <h1 style="font-color:White; text-align:Center"><strong><em>Viva la Sleep</em></strong></h1>
+            </title>
+        -->
+            
+            <!-- CSS -->
+            <STYLE type="text/css">
+            <!-- .slides {position:absolute; left: 25%; top:25%; visibility:hidden} -->
+            </STYLE>
+            
+            <!-- Javascript -->
+            <SCRIPT language="JavaScript1.2">
+            var numSlides = 5;
+            var currentSlide = numSlides;
+            
+            <!-- This is for the captions for the slide show -->
+            
+            var captionTxt = new Array(numSlides);
+
+            function setUpCaptions() {
+                captionTxt[1] = "Lebron James"
+                captionTxt[2] = "LBJ"
+                captionTxt[3] = "The King"
+                captionTxt[4] = "No 6"
+                captionTxt[5] = "The Chosen One"
+            }
+            
+            
+            function setUp() {
+                if (!document.all) {
+                   document.all = document;
+                   for (i=1;i<=numSlides;i++){
+                    document.all[("image"+i)].style=document.all[("image"+i)];
+                   }
+                }
+            switchSlide(1);
+            }
+            
+            function switchSlide(sDir) {
+                newSlide = currentSlide + sDir;
+                    if (!newSlide) newSlide=numSlides;
+                    if (newSlide > numSlides) newSlide=1;
+                    document.all[("image"+newSlide)].style.visibility="visible";
+                    document.all[("image"+currentSlide)].style.visibility="hidden";
+                // remove the next line if you don't want captions:
+                document.all["captions"].document.forCaptions.captionsText.value=captionTxt[newSlide];
+                currentSlide = newSlide;
+            }
+
+            //-->
+            </script> 
         
-    </head>
-    <body style="background-color:red">
-        <h1 style="font-color:White; text-align:Center"><strong><em>Viva la Sleep</em></strong></h1>
-    </body>
+        </head>
+        
+        <body>
+        
+            <BODY onLoad="setUp()">
+            <B>CNET Builder.com slide show!</B>
+            <DIV id="image5" class="slides"><IMG src="http://media2.abc15.com//photo/2013/06/20/KNXV_LeBron_James_20130620073458_320_240.JPG"></DIV>
+            <DIV id="image4" class="slides"><IMG src="http://media2.abc15.com//photo/2013/06/20/KNXV_LeBron_James_20130620073458_320_240.JPG"></DIV>
+            <DIV id="image3" class="slides"><IMG src="http://4.bp.blogspot.com/-Y1Oc1GDjO3Q/TzceD0DNOtI/AAAAAAAAEN0/9Dx90KZbS0k/s320/image.jpg"></DIV>
+            <DIV id="image2" class="slides"><IMG src="http://msalas15.edublogs.org/files/2011/02/kobryant-1z6ruuj.jpg"></DIV>
+            <DIV id="image1" class="slides"><IMG src="http://lh4.ggpht.com/-LtitLG99yVw/Tv40yz9mgUI/AAAAAAAAAps/JRw5j6t21AI/LeBron-turns-27-brings-Heat-to-Twin-Cities-HKPH4TT-x-extralarge.png"></DIV>
+            
+            <DIV style="position:absolute; top:350px; left:100px">
+            <A href="javascript:switchSlide(-1)"><IMG src="previous.gif" border=0></A>
+            <A href="javascript:switchSlide(1)"><IMG src="next.gif" border=0></A>
+            </DIV>
+            
+            <DIV id="captions" style="position:absolute; left: 320px; top:75px">
+            <B>Picture caption</B>
+            <FORM name=forCaptions>
+            <TEXTAREA name="captionsText" wrap="virtual" rows=25 cols=20"></TEXTAREA>
+            </FORM>
+            </DIV>
+
+
+        </body>
 </html>
